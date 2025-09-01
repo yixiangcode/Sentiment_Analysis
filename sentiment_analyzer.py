@@ -6,6 +6,7 @@ def analyze_sentiment(df):
         print(f"There are {len(df[df['Sentiment'].str.strip() == 'Positive'])} positive posts.")
         print(f"There are {len(df[df['Year'] == 2023])} posts in 2023.")
         print(f"There are {len(df[df['Country'].str.strip() == 'UK'])} posts from United Kingdom.")
+        print(f"The average retweets is {df['Retweets'].mean():.2f} and average likes is {df['Likes'].mean():.2f}.")
         
 
 def save_sentiment_report(df, filename="sentiment_report.csv"):
