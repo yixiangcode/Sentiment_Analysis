@@ -13,8 +13,9 @@ def plot_sentiment_distribution(df):
 
 def plot_country_distribution(df):
     plt.figure(figsize=(6,4))
-    top_sentiments = df['Country'].value_counts().head(10)
-    top_sentiments.plot(kind='pie', autopct='%1.1f%%')
+    df['Country'] = df['Country'].str.strip().str.lower()
+    country_counts = df['Country'].value_counts().head(10)
+    country_counts.plot(kind='pie', autopct='%1.1f%%')
     plt.title("Country Distribution")
     plt.ylabel("")
     plt.savefig("country_distribution.png")
